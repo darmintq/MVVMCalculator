@@ -5,7 +5,6 @@ using System.Linq;
 
 public class Model
 {
-    [SerializeField] private OutputView OutputView;
     private const string Empty = "";
     private const string DefaultValue = "0";
 
