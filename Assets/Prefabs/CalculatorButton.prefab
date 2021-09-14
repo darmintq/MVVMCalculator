@@ -213,6 +213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00356e65accb28f46b09efb8ba40c06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ViewModel: {fileID: 0}
+  CalculatorView: {fileID: 6945137648763369733, guid: 763302ccc09fa9f42a4914552b7598f5, type: 3}
   ButtonId: 
   Button: {fileID: 8197007794946227904}

@@ -3,14 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ViewModel : MonoBehaviour
+public class ViewModel
 {
-	[SerializeField] private Model Model;
+	private Model Model = new Model();
 
     private string[] Operations = { "/", "*", "+", "-" };
 
+    public void InitializeViewModel()
+    {
+        Model.InitializeModel();
+    }
+
     public void OnButtonClicked(string ButtonId)
     {
+
         if (Array.Exists(Operations, x => x==ButtonId))
             Model.AddOperation(ButtonId);
         else
@@ -32,12 +38,12 @@ public class ViewModel : MonoBehaviour
         }
 	}
 
-    private void OnEnable()
+    public void OnEnable()
     {
         Model.OnDataChangedEvent += OnDataChanged;
     }
 
-    private void OnDestroy()
+    public void OnDestroy()
     {
         Model.OnDataChangedEvent -= OnDataChanged;
     }

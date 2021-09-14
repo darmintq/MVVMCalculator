@@ -6,17 +6,16 @@ using UnityEngine.UI;
 public class OutputView : MonoBehaviour
 {
     [SerializeField] private Text output;
-    [SerializeField] private ViewModel ViewModel;
-
+    [SerializeField] private CalculatorView CalculatorView;
 
     private void OnEnable()
     {
-        ViewModel.OnOutputValueChangedEvent += OnOutputValueChanged;
+        CalculatorView.ViewModel.OnOutputValueChangedEvent += OnOutputValueChanged;
     }
 
     private void OnDestroy()
     {
-        ViewModel.OnOutputValueChangedEvent -= OnOutputValueChanged;
+        CalculatorView.ViewModel.OnOutputValueChangedEvent -= OnOutputValueChanged;
     }
 
     private void OnOutputValueChanged(string newOutputValue)

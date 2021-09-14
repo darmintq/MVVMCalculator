@@ -3,10 +3,9 @@ using System.Collections;
 using System;
 using System.Linq;
 
-public class Model : MonoBehaviour
+public class Model
 {
     [SerializeField] private OutputView OutputView;
-
     private const string Empty = "";
     private const string DefaultValue = "0";
 
@@ -18,7 +17,7 @@ public class Model : MonoBehaviour
 
     public event DataHandler OnDataChangedEvent;
 
-    void Start()
+    public void InitializeModel()
     {
         LoadModel();
     }
@@ -48,6 +47,7 @@ public class Model : MonoBehaviour
     private void DataChange()
     {
         SaveModel();
+
         this.OnDataChangedEvent?.Invoke(FirstValue, CurrentOperation, SecondValue);
     }
 

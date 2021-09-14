@@ -4,14 +4,13 @@ using UnityEngine.UI;
 
 public class ButtonView : MonoBehaviour
 {
-
-	[SerializeField] private ViewModel ViewModel;
-	[SerializeField] private string ButtonId;
+    [SerializeField] private CalculatorView CalculatorView;
+    [SerializeField] private string ButtonId;
 	[SerializeField] private Button Button;
 
 	private void OnButtonClicked()
 	{
-		ViewModel.OnButtonClicked(ButtonId);
+        CalculatorView.ViewModel.OnButtonClicked(ButtonId);
 	}
 
     private void OnEnable()
